@@ -51,6 +51,20 @@ its tools are unchanged.
    between. `skills/` is otherwise upstream's and stays that way.
 3. **Never commit to `main`.** Always work on a branch, open a PR, merge the PR
    — even for docs.
+
+   **This is a fork, so name the repo explicitly.** A bare `gh pr create` here
+   opens the PR against `AminForou/mcp-gsc`, not against our `main`. It has
+   happened. `gh` prints only the resulting URL, so read the org in it.
+
+   ```bash
+   gh pr create --repo Klartika/gsc-mcp-server --base main --head <branch> ...
+   gh pr merge <N> --repo Klartika/gsc-mcp-server --squash --delete-branch
+   ```
+
+   `gh repo set-default Klartika/gsc-mcp-server` fixes the default in an
+   existing clone; a fresh clone loses it, so pass the flags regardless. Also
+   pass the PR number to `gh pr merge` — without it the command can fail while
+   a surrounding script reports success.
 4. **TDD.** Write a failing test first, then the implementation. Keep the suite
    green.
 
