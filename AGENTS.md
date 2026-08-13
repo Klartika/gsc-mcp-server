@@ -52,9 +52,10 @@ its tools are unchanged.
 3. **Never commit to `main`.** Always work on a branch, open a PR, merge the PR
    — even for docs.
 
-   **This is a fork, so name the repo explicitly.** A bare `gh pr create` here
-   opens the PR against `AminForou/mcp-gsc`, not against our `main`. It has
-   happened. `gh` prints only the resulting URL, so read the org in it.
+   **Name the repo explicitly.** This clone keeps an `upstream` remote for
+   `AminForou/mcp-gsc`, so a bare `gh pr create` can resolve the base to
+   upstream rather than our `main`. It has happened. `gh` prints only the
+   resulting URL, so read the org in it.
 
    ```bash
    gh pr create --repo Klartika/gsc-mcp-server --base main --head <branch> ...
