@@ -50,6 +50,13 @@ file and push. That push triggers the redeploy.
 Two separate steps on purpose: the image existing and the image running are
 different decisions, and the gap is where you notice a bad build.
 
+The GHCR package is older than this repository, so it is not linked to it.
+Publishing works because this repository was granted **Write** under the
+package's *Manage Actions access*, by hand. If that grant is ever removed, the
+release workflow builds the image and then fails at the push step with `denied:
+installation not allowed to Write organization package` — a permissions
+failure wearing a registry failure's clothes.
+
 ### Roll back
 
 Bump the pinned tag in the infra repo back to the previous version and push.

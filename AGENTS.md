@@ -26,6 +26,11 @@ its tools are unchanged.
    monkeypatches, not source edits. Periodically:
    `git fetch upstream && git rebase upstream/main`.
 
+   This repository is **not** a GitHub fork — it shares upstream's history but
+   not its fork network, so there is no "Sync fork" button and `gh repo sync`
+   does not apply. The `upstream` remote above is the only route, and it works
+   exactly as it would in a fork. A scheduled agent checks this weekly.
+
    Documented exceptions, all cheap to re-apply, all for the same reason —
    upstream ships artefacts describing a **local** server this fork does not
    deploy:
