@@ -1,3 +1,5 @@
+@AGENTS.md
+
 # CLAUDE.md
 
 Context for AI coding assistants (Claude, Cursor, Copilot, etc.) working in this repo.
